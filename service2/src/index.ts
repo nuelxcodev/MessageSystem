@@ -10,7 +10,7 @@ const start = async () => {
     await mongoose.connect(process.env.MONGO_URI as string);
     console.log("Worker service is connected to the database");
 
-    const redisHost = process.env.REDIS_HOST || "127.0.0.1";
+    const redisHost = process.env.REDIS_HOST;
     const redisPort = parseInt(process.env.REDIS_PORT || "6379", 10);
 
     console.log(`Connecting to Redis at ${redisHost}:${redisPort}`);
