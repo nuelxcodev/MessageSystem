@@ -12,7 +12,7 @@ const start = async () => {
   const worker = new Worker("queue-message", processor, {
     connection: {
       host: process.env.REDIS_HOST,
-      port: parseInt(process.env.REDIS_PORT as any),
+      port: process.env.REDIS_PORT as any,
     },
     concurrency: 5,
   });
